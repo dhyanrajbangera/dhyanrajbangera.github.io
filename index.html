@@ -1,405 +1,388 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="en">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#0b1220">
-<meta name="description" content="Dhyanraj Bangera — engineering projects, embedded systems, Arduino, CAD and 3D design.">
-<title>Dhyanraj Bangera | Engineering Portfolio</title>
+<meta name="theme-color" content="#e51b23">
+<meta name="description" content="Dhyanraj Bangera — Engineering, Embedded Systems and Product Design.">
+<title>Dhyanraj Bangera — Creative Engineering Portfolio</title>
 
 <style>
-:root{
-  --bg:#0b1220;
-  --panel:#111c2e;
-  --panel2:#142238;
-  --text:#edf3fb;
-  --muted:#9aabc0;
-  --line:#26364d;
-  --accent:#78b7ff;
-  --accent2:#9be3d2;
-  --max:1080px;
+:root {
+  --red: #e51b23;
+  --dark-red: #b80f18;
+  --white: #fff;
+  --soft: #ffe4e4;
+  --border: rgba(255,255,255,.32);
+  --muted: rgba(255,255,255,.72);
+  --max: 1120px;
 }
 
-*{box-sizing:border-box}
-html{scroll-behavior:smooth}
-body{
-  margin:0;
-  background:radial-gradient(ellipse at 80% 0%,#18304c 0,transparent 38%),var(--bg);
-  color:var(--text);
-  font:16px/1.65 Inter,ui-sans-serif,system-ui,-apple-system,"Segoe UI",sans-serif;
+* {
+  box-sizing: border-box;
+  cursor: crosshair;
 }
 
-a{color:inherit;text-decoration:none}
-a:hover{color:var(--accent)}
-.wrap{width:min(var(--max),calc(100% - 40px));margin:auto}
-
-/* =================================
-   SWARM INTRO ANIMATION
-================================= */
-
-#swarm-intro{
-  position:fixed;
-  inset:0;
-  z-index:9999;
-  background:#d71920;
-  display:flex;
-  align-items:center;
-  justify-content:center;
-  overflow:hidden;
-  transition:opacity .9s ease,visibility .9s ease;
+html {
+  scroll-behavior: smooth;
 }
 
-#swarm-intro.hidden{
-  opacity:0;
-  visibility:hidden;
-  pointer-events:none;
+body {
+  margin: 0;
+  background: var(--red);
+  color: var(--white);
+  font-family: Inter, Arial, sans-serif;
+  overflow-x: hidden;
 }
 
-#swarm-canvas{
-  position:absolute;
-  inset:0;
-  width:100%;
-  height:100%;
+a {
+  color: inherit;
+  text-decoration: none;
 }
 
-.swarm-content{
-  position:relative;
-  z-index:2;
-  text-align:center;
-  padding:20px;
-  pointer-events:none;
+a:hover {
+  color: #ffe38b;
 }
 
-.swarm-label{
-  font-size:.72rem;
-  font-weight:800;
-  letter-spacing:.35em;
-  color:#ffffffa6;
-  text-transform:uppercase;
-  opacity:0;
-  animation:swarmFade .7s ease .4s forwards;
+button {
+  font: inherit;
 }
 
-.swarm-title{
-  font-size:clamp(3rem,10vw,8rem);
-  font-weight:900;
-  line-height:.92;
-  letter-spacing:-.075em;
-  color:white;
-  margin:25px 0;
+#swarm {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  width: 100%;
+  height: 100%;
+  pointer-events: none;
 }
 
-.swarm-title span{
-  display:block;
-  opacity:0;
-  transform:translateY(35px);
-  animation:swarmText .8s cubic-bezier(.2,.8,.2,1) forwards;
+.wrap {
+  width: min(var(--max), calc(100% - 48px));
+  margin: auto;
+  position: relative;
 }
 
-.swarm-title span:nth-child(2){
-  animation-delay:.65s;
+header {
+  position: relative;
+  z-index: 2;
+  border-bottom: 1px solid var(--border);
+  padding: 24px 0;
 }
 
-.swarm-caption{
-  color:#ffffffb5;
-  font-size:.9rem;
-  letter-spacing:.12em;
-  opacity:0;
-  animation:swarmFade .8s ease 1.5s forwards;
+nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 20px;
 }
 
-.swarm-skip{
-  position:absolute;
-  z-index:5;
-  right:25px;
-  bottom:25px;
-  background:transparent;
-  color:white;
-  border:1px solid #ffffff80;
-  border-radius:50px;
-  padding:9px 17px;
-  font:inherit;
-  font-size:.8rem;
-  cursor:pointer;
-  transition:background .2s;
+.brand {
+  font-size: 1.15rem;
+  font-weight: 900;
+  letter-spacing: -.04em;
 }
 
-.swarm-skip:hover{
-  background:#ffffff25;
+.brand span {
+  color: #ffe38b;
 }
 
-@keyframes swarmFade{
-  to{opacity:1}
+.navlinks {
+  display: flex;
+  gap: 30px;
+  font-size: .9rem;
+  font-weight: 600;
 }
 
-@keyframes swarmText{
-  to{
-    opacity:1;
-    transform:translateY(0);
+.navlinks a {
+  position: relative;
+}
+
+.hero {
+  padding: 125px 0 115px;
+  position: relative;
+  border-bottom: 1px solid var(--border);
+}
+
+.eyebrow {
+  font-size: .73rem;
+  font-weight: 800;
+  text-transform: uppercase;
+  letter-spacing: .22em;
+  color: #ffe38b;
+}
+
+h1 {
+  font-size: clamp(3.5rem, 10vw, 8.5rem);
+  line-height: .91;
+  letter-spacing: -.085em;
+  margin: 28px 0;
+  max-width: 950px;
+  font-weight: 900;
+}
+
+h1 span {
+  color: #ffe38b;
+}
+
+.lead {
+  max-width: 650px;
+  font-size: 1.12rem;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.actions {
+  display: flex;
+  gap: 13px;
+  flex-wrap: wrap;
+  margin-top: 35px;
+}
+
+.btn {
+  display: inline-flex;
+  padding: 13px 21px;
+  border: 1px solid var(--white);
+  border-radius: 50px;
+  font-size: .9rem;
+  font-weight: 750;
+  transition: .25s;
+}
+
+.btn.primary {
+  background: white;
+  color: var(--red);
+}
+
+.btn:hover {
+  background: #ffe38b;
+  border-color: #ffe38b;
+  color: #8e1016;
+  transform: translateY(-3px);
+}
+
+section {
+  padding: 90px 0;
+  border-bottom: 1px solid var(--border);
+  position: relative;
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: end;
+  gap: 20px;
+  margin-bottom: 40px;
+}
+
+h2 {
+  font-size: clamp(2rem, 5vw, 3.6rem);
+  letter-spacing: -.06em;
+  line-height: 1.05;
+  margin: 13px 0;
+  font-weight: 900;
+}
+
+.sub {
+  color: var(--muted);
+  font-size: .9rem;
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 15px;
+}
+
+.card {
+  border: 1px solid var(--border);
+  padding: 26px;
+  min-height: 300px;
+  display: flex;
+  flex-direction: column;
+  position: relative;
+  background: rgba(120,0,0,.12);
+  transition: .3s ease;
+}
+
+.card:hover {
+  background: rgba(255,255,255,.13);
+  transform: translateY(-7px);
+  border-color: white;
+}
+
+.number {
+  font-size: .75rem;
+  font-weight: 850;
+  letter-spacing: .16em;
+  color: #ffe38b;
+}
+
+h3 {
+  font-size: 1.45rem;
+  letter-spacing: -.04em;
+  line-height: 1.2;
+  margin: 25px 0 12px;
+}
+
+.card p {
+  font-size: .92rem;
+  color: var(--muted);
+  line-height: 1.8;
+}
+
+.tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 7px;
+  margin-top: auto;
+  padding-top: 20px;
+}
+
+.tag {
+  border: 1px solid var(--border);
+  border-radius: 30px;
+  padding: 5px 10px;
+  font-size: .72rem;
+  color: white;
+}
+
+.about {
+  display: grid;
+  grid-template-columns: 1.3fr .7fr;
+  gap: 70px;
+}
+
+.about p {
+  color: var(--muted);
+  line-height: 1.9;
+  max-width: 650px;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 20px;
+}
+
+.skill {
+  border: 1px solid var(--border);
+  padding: 10px 13px;
+  font-size: .85rem;
+  transition: .2s;
+}
+
+.skill:hover {
+  background: white;
+  color: var(--red);
+}
+
+.contact {
+  border: 1px solid white;
+  padding: 45px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 30px;
+  background: rgba(120,0,0,.13);
+}
+
+.contact p {
+  color: var(--muted);
+}
+
+footer {
+  padding: 30px 0 40px;
+  display: flex;
+  justify-content: space-between;
+  gap: 15px;
+  font-size: .8rem;
+  color: var(--muted);
+}
+
+.cursor-note {
+  font-size: .72rem;
+  color: var(--muted);
+  letter-spacing: .12em;
+  margin-top: 45px;
+  text-transform: uppercase;
+}
+
+@media(max-width:760px) {
+  .grid {
+    grid-template-columns: 1fr;
+  }
+
+  .about {
+    grid-template-columns: 1fr;
+    gap: 35px;
+  }
+
+  .hero {
+    padding: 90px 0;
+  }
+
+  section {
+    padding: 65px 0;
+  }
+
+  .contact {
+    flex-direction: column;
+    align-items: flex-start;
+    padding: 28px;
+  }
+
+  .section-head {
+    align-items: flex-start;
+    flex-direction: column;
+  }
+
+  .navlinks {
+    gap: 14px;
+    font-size: .8rem;
   }
 }
 
-/* =================================
-   MAIN PORTFOLIO
-================================= */
+@media(max-width:460px) {
+  .wrap {
+    width: calc(100% - 30px);
+  }
 
-header{
-  padding:22px 0;
-  border-bottom:1px solid #ffffff12;
-}
+  h1 {
+    font-size: 3.5rem;
+  }
 
-nav{
-  display:flex;
-  align-items:center;
-  justify-content:space-between;
-  gap:20px;
-}
+  .navlinks {
+    gap: 10px;
+  }
 
-.brand{
-  font-weight:750;
-  letter-spacing:.02em;
-}
-
-.brand span{color:var(--accent)}
-
-.navlinks{
-  display:flex;
-  gap:24px;
-  color:var(--muted);
-  font-size:.92rem;
-}
-
-.hero{
-  padding:104px 0 86px;
-  max-width:850px;
-}
-
-.eyebrow{
-  color:var(--accent2);
-  font-size:.78rem;
-  font-weight:750;
-  letter-spacing:.18em;
-  text-transform:uppercase;
-}
-
-h1{
-  font-size:clamp(2.8rem,7vw,5.5rem);
-  line-height:1.04;
-  letter-spacing:-.055em;
-  margin:18px 0 22px;
-}
-
-h1 span{color:var(--accent)}
-
-.lead{
-  max-width:690px;
-  color:var(--muted);
-  font-size:1.13rem;
-}
-
-.actions{
-  display:flex;
-  flex-wrap:wrap;
-  gap:12px;
-  margin-top:32px;
-}
-
-.btn{
-  display:inline-flex;
-  align-items:center;
-  justify-content:center;
-  padding:11px 17px;
-  border:1px solid var(--line);
-  border-radius:8px;
-  font-weight:650;
-}
-
-.btn.primary{
-  background:var(--text);
-  color:#0b1220;
-  border-color:var(--text);
-}
-
-section{
-  padding:66px 0;
-  border-top:1px solid #ffffff12;
-}
-
-.section-head{
-  display:flex;
-  align-items:end;
-  justify-content:space-between;
-  gap:20px;
-  margin-bottom:28px;
-}
-
-h2{
-  font-size:1.8rem;
-  letter-spacing:-.03em;
-  margin:0;
-}
-
-.sub{
-  color:var(--muted);
-  margin:7px 0 0;
-}
-
-.grid{
-  display:grid;
-  grid-template-columns:repeat(3,1fr);
-  gap:16px;
-}
-
-.card{
-  background:linear-gradient(150deg,var(--panel),#0f1929);
-  border:1px solid var(--line);
-  border-radius:13px;
-  padding:22px;
-  min-height:245px;
-  display:flex;
-  flex-direction:column;
-  transition:transform .25s,border-color .25s;
-}
-
-.card:hover{
-  transform:translateY(-5px);
-  border-color:var(--accent);
-}
-
-.number{
-  font-size:.78rem;
-  color:var(--accent2);
-  letter-spacing:.12em;
-  font-weight:750;
-}
-
-h3{
-  font-size:1.18rem;
-  margin:13px 0 8px;
-}
-
-.card p{
-  color:var(--muted);
-  font-size:.94rem;
-  margin:0 0 18px;
-}
-
-.tags{
-  display:flex;
-  flex-wrap:wrap;
-  gap:7px;
-  margin-top:auto;
-}
-
-.tag{
-  font-size:.75rem;
-  color:#c5d5e8;
-  border:1px solid #34465f;
-  border-radius:99px;
-  padding:4px 9px;
-}
-
-.about{
-  display:grid;
-  grid-template-columns:1.2fr .8fr;
-  gap:42px;
-}
-
-.about p{
-  color:var(--muted);
-  margin-top:0;
-}
-
-.skills{
-  display:flex;
-  flex-wrap:wrap;
-  gap:9px;
-  align-content:start;
-}
-
-.skill{
-  background:var(--panel2);
-  border:1px solid var(--line);
-  padding:8px 12px;
-  border-radius:8px;
-  font-size:.9rem;
-}
-
-.contact{
-  background:linear-gradient(120deg,#142944,#101b2d);
-  border:1px solid var(--line);
-  border-radius:15px;
-  padding:30px;
-  display:flex;
-  justify-content:space-between;
-  align-items:center;
-  gap:24px;
-}
-
-.contact p{
-  color:var(--muted);
-  margin:5px 0 0;
-}
-
-footer{
-  padding:28px 0 40px;
-  color:var(--muted);
-  font-size:.85rem;
-  display:flex;
-  justify-content:space-between;
-  gap:16px;
-}
-
-@media(max-width:760px){
-  .grid{grid-template-columns:1fr}
-  .about{grid-template-columns:1fr}
-  .hero{padding:75px 0 65px}
-  .navlinks{gap:12px;font-size:.82rem}
-  .contact{
-    align-items:flex-start;
-    flex-direction:column;
+  .hero {
+    padding: 75px 0;
   }
 }
 
-@media(max-width:460px){
-  .navlinks a:nth-child(2){display:none}
-  .wrap{width:min(var(--max),calc(100% - 28px))}
-}
-
-@media(prefers-reduced-motion:reduce){
-  html{scroll-behavior:auto}
-  *,*::before,*::after{
-    animation-duration:.01ms!important;
-    transition-duration:.01ms!important;
+@media(prefers-reduced-motion:reduce) {
+  html {
+    scroll-behavior: auto;
   }
-  #swarm-intro{display:none}
+
+  *,*::before,*::after {
+    transition-duration: .01ms !important;
+  }
 }
 </style>
 </head>
 
 <body>
 
-<!-- SWARM INTRO -->
-<div id="swarm-intro" aria-label="Portfolio introduction">
-  <canvas id="swarm-canvas"></canvas>
+<!-- PERMANENT CURSOR SWARM -->
+<canvas id="swarm"></canvas>
 
-  <div class="swarm-content">
-    <div class="swarm-label">DHYANRAJ BANGERA · ENGINEERING</div>
-    <div class="swarm-title">
-      <span>IDEAS INTO</span>
-      <span>REALITY.</span>
-    </div>
-    <div class="swarm-caption">DESIGN · BUILD · EXPERIMENT</div>
-  </div>
-
-  <button class="swarm-skip" id="swarm-skip">Skip intro ↗</button>
-</div>
-
-<!-- NAVIGATION -->
 <header>
   <div class="wrap">
-    <nav aria-label="Main navigation">
+    <nav>
       <a class="brand" href="#">DHYANRAJ<span>.</span></a>
       <div class="navlinks">
         <a href="#projects">Projects</a>
@@ -414,30 +397,38 @@ footer{
 <div class="wrap">
 
   <!-- HERO -->
-  <section class="hero" style="border:0">
+  <div class="hero">
     <div class="eyebrow">Engineering · Embedded Systems · Product Design</div>
 
-    <h1>Building ideas<br>into <span>real things.</span></h1>
+    <h1>
+      Building ideas<br>
+      into <span>real things.</span>
+    </h1>
 
     <p class="lead">
-      I'm Dhyanraj Bangera. I enjoy turning concepts into working projects
-      through electronics, embedded programming, CAD and hands-on prototyping.
+      I'm Dhyanraj Bangera. I enjoy turning concepts into working
+      projects through electronics, embedded programming, CAD
+      and hands-on prototyping.
     </p>
 
     <div class="actions">
-      <a class="btn primary" href="#projects">Explore my work</a>
+      <a class="btn primary" href="#projects">Explore my work ↗</a>
       <a class="btn" href="https://github.com/dhyanrajbangera"
          target="_blank" rel="noreferrer">GitHub profile ↗</a>
     </div>
-  </section>
+
+    <div class="cursor-note">
+      An independent mind. A collaborative way of building.
+    </div>
+  </div>
 
   <!-- PROJECTS -->
   <section id="projects">
     <div class="section-head">
       <div>
-        <div class="eyebrow">Selected work</div>
-        <h2>Projects</h2>
-        <p class="sub">A selection of hands-on builds and experiments.</p>
+        <div class="eyebrow">01 — Selected work</div>
+        <h2>Projects.</h2>
+        <p class="sub">Ideas transformed into working prototypes.</p>
       </div>
 
       <a class="sub"
@@ -451,8 +442,8 @@ footer{
         <div class="number">01 / HARDWARE</div>
         <h3>DIY Flight Simulator Controller</h3>
         <p>
-          An Arduino-based USB flight controller with analog controls,
-          physical switches and a custom 3D-printed enclosure.
+          An Arduino-based USB flight controller with analog
+          controls, physical switches and a custom 3D-printed enclosure.
         </p>
         <div class="tags">
           <span class="tag">Arduino Pro Micro</span>
@@ -479,8 +470,8 @@ footer{
         <div class="number">03 / INTERACTIVE</div>
         <h3>Arcade Game</h3>
         <p>
-          A physical arcade-style game combining microcontroller code,
-          button inputs and interactive gameplay.
+          A physical arcade-style game combining microcontroller
+          code, button inputs and interactive gameplay.
         </p>
         <div class="tags">
           <span class="tag">Arduino</span>
@@ -495,26 +486,28 @@ footer{
   <!-- ABOUT -->
   <section id="about">
     <div class="about">
+
       <div>
-        <div class="eyebrow">A little about me</div>
+        <div class="eyebrow">02 — A little about me</div>
         <h2>Curious by design.<br>Practical by nature.</h2>
 
         <p>
-          I like learning by building: understanding how components work
-          together, testing ideas, improving designs and documenting what
-          I learn. My interests include embedded systems, electronics,
-          robotics, digital fabrication and software.
+          I like learning by building: understanding how components
+          work together, testing ideas, improving designs and
+          documenting what I learn. My interests include embedded
+          systems, electronics, robotics, digital fabrication and software.
         </p>
 
         <p>
-          This portfolio is a growing record of my work. I'll keep adding
-          projects, build notes and new experiments as they develop.
+          This portfolio is a growing record of my work. I'll keep
+          adding projects, build notes and new experiments as they develop.
         </p>
       </div>
 
       <div>
         <div class="eyebrow">Areas I work with</div>
-        <div class="skills" style="margin-top:16px">
+
+        <div class="skills">
           <span class="skill">Arduino</span>
           <span class="skill">Embedded Systems</span>
           <span class="skill">C / C++</span>
@@ -525,6 +518,7 @@ footer{
           <span class="skill">Git & GitHub</span>
         </div>
       </div>
+
     </div>
   </section>
 
@@ -532,9 +526,9 @@ footer{
   <section id="contact">
     <div class="contact">
       <div>
-        <div class="eyebrow">Let's connect</div>
-        <h2>Have an idea or opportunity?</h2>
-        <p>Explore my projects or reach out through GitHub.</p>
+        <div class="eyebrow">03 — Let's connect</div>
+        <h2>Have an idea<br>or opportunity?</h2>
+        <p>Let's build something interesting.</p>
       </div>
 
       <a class="btn primary"
@@ -548,90 +542,154 @@ footer{
 
 <footer class="wrap">
   <span>© <span id="year"></span> Dhyanraj Bangera</span>
-  <span>Designed & built with care.</span>
+  <span>Designed & built with curiosity.</span>
 </footer>
 
 <script>
-/* =================================
-   SWARM CURSOR ENGINE
-================================= */
+/* =====================================
+   PERMANENT MULTI-CURSOR SWARM ENGINE
+===================================== */
 
-const intro = document.getElementById("swarm-intro");
-const canvas = document.getElementById("swarm-canvas");
+const canvas = document.getElementById("swarm");
 const ctx = canvas.getContext("2d");
-const skipButton = document.getElementById("swarm-skip");
 
 const reducedMotion = window.matchMedia(
   "(prefers-reduced-motion: reduce)"
 ).matches;
 
-let width = 0;
-let height = 0;
-let animationFrame;
-let startTime = 0;
-let finished = false;
+let W = 0;
+let H = 0;
+let dpr = 1;
+let lastTime = 0;
+let elapsed = 0;
+let agents = [];
+let targets = [];
+let targetIndex = 0;
 
-const colors = [
+const palette = [
   "#ffffff",
-  "#ffdb70",
-  "#7ee8fa",
-  "#ff8cae",
-  "#b8ff9f",
-  "#d6b3ff",
-  "#ffb36b"
+  "#ffe38b",
+  "#9af4ff",
+  "#ffb7d5",
+  "#c5ffad",
+  "#d7b8ff",
+  "#ffbc8a",
+  "#b4fff0"
 ];
 
-const cursorCount = 22;
-const cursors = [];
+const agentCount = 16;
 
-function resizeCanvas(){
-  const ratio = Math.min(window.devicePixelRatio || 1, 2);
+function resize() {
+  W = window.innerWidth;
+  H = window.innerHeight;
+  dpr = Math.min(window.devicePixelRatio || 1, 2);
 
-  width = window.innerWidth;
-  height = window.innerHeight;
+  canvas.width = W * dpr;
+  canvas.height = H * dpr;
 
-  canvas.width = width * ratio;
-  canvas.height = height * ratio;
+  ctx.setTransform(dpr, 0, 0, dpr, 0, 0);
 
-  ctx.setTransform(ratio,0,0,ratio,0,0);
+  updateTargets();
 }
 
-window.addEventListener("resize",resizeCanvas);
-resizeCanvas();
+window.addEventListener("resize", resize);
 
-/* Create coordinated cursor agents */
+/* Create cursor agents */
 
-for(let i=0;i<cursorCount;i++){
-  cursors.push({
-    x:Math.random()*width,
-    y:Math.random()*height,
-    previousX:0,
-    previousY:0,
-    color:colors[i%colors.length],
-    phase:(Math.PI*2*i)/cursorCount,
-    speed:.6+Math.random()*.5,
-    size:9+Math.random()*3
+for (let i = 0; i < agentCount; i++) {
+  const x = Math.random() * window.innerWidth;
+  const y = Math.random() * window.innerHeight;
+
+  agents.push({
+    x,
+    y,
+    oldX: x,
+    oldY: y,
+    vx: 0,
+    vy: 0,
+    color: palette[i % palette.length],
+    size: 8 + Math.random() * 3,
+    offset: i * .42,
+    phase: Math.random() * Math.PI * 2,
+    speed: .65 + Math.random() * .45,
+    label: ["design", "build", "create", "explore"][i % 4]
   });
 }
 
-/* Draw cursor arrows */
+/* Get actual page elements as destinations */
 
-function drawCursor(x,y,color,size){
+function updateTargets() {
+  const elements = document.querySelectorAll(
+    ".brand, .eyebrow, h1, h2, h3, .btn, .card, .skill, .contact"
+  );
+
+  targets = [];
+
+  elements.forEach((el, index) => {
+    const rect = el.getBoundingClientRect();
+
+    const x = rect.left + rect.width / 2;
+    const y = rect.top + rect.height / 2;
+
+    if (
+      rect.width > 0 &&
+      rect.height > 0 &&
+      rect.bottom > -100 &&
+      rect.top < H + 100
+    ) {
+      targets.push({
+        x,
+        y,
+        width: Math.min(rect.width, W),
+        height: rect.height,
+        index
+      });
+    }
+  });
+}
+
+/* Find the current destination */
+
+function getDestination(agent, index, time) {
+  if (!targets.length) {
+    return {
+      x: W / 2 + Math.sin(time + agent.phase) * 100,
+      y: H / 2 + Math.cos(time + agent.phase) * 100
+    };
+  }
+
+  const target = targets[
+    (targetIndex + Math.floor(index / 3)) % targets.length
+  ];
+
+  const angle = agent.phase + time * .5;
+  const spread = 20 + (index % 4) * 9;
+
+  return {
+    x: target.x + Math.cos(angle) * spread,
+    y: target.y + Math.sin(angle) * spread
+  };
+}
+
+/* Draw cursor pointer */
+
+function drawCursor(agent) {
   ctx.save();
-  ctx.translate(x,y);
 
-  ctx.fillStyle=color;
-  ctx.strokeStyle="#7b1118";
-  ctx.lineWidth=1;
+  ctx.translate(agent.x, agent.y);
+
+  ctx.fillStyle = agent.color;
+  ctx.strokeStyle = "#8f1016";
+  ctx.lineWidth = 1.1;
 
   ctx.beginPath();
-  ctx.moveTo(0,0);
-  ctx.lineTo(0,size*1.7);
-  ctx.lineTo(size*.45,size*1.25);
-  ctx.lineTo(size*.85,size*2);
-  ctx.lineTo(size*1.12,size*1.85);
-  ctx.lineTo(size*.72,size*1.1);
-  ctx.lineTo(size*1.35,size*1.05);
+  ctx.moveTo(0, 0);
+  ctx.lineTo(0, 20);
+  ctx.lineTo(5, 15);
+  ctx.lineTo(10, 24);
+  ctx.lineTo(14, 22);
+  ctx.lineTo(9, 13);
+  ctx.lineTo(18, 13);
   ctx.closePath();
 
   ctx.fill();
@@ -640,161 +698,146 @@ function drawCursor(x,y,color,size){
   ctx.restore();
 }
 
-/* Animation */
+/* Draw connecting lines between agents */
 
-function animate(time){
-  if(finished)return;
+function drawConnections() {
+  ctx.save();
 
-  if(!startTime)startTime=time;
+  ctx.lineWidth = .8;
+  ctx.globalAlpha = .22;
 
-  const elapsed=(time-startTime)/1000;
-  const progress=Math.min(elapsed/4.8,1);
+  for (let i = 0; i < agents.length; i++) {
+    for (let j = i + 1; j < agents.length; j++) {
+      const a = agents[i];
+      const b = agents[j];
 
-  ctx.clearRect(0,0,width,height);
+      const distance = Math.hypot(a.x - b.x, a.y - b.y);
 
-  const centerX=width/2;
-  const centerY=height/2;
+      if (distance < 125) {
+        ctx.beginPath();
+        ctx.moveTo(a.x, a.y);
+        ctx.lineTo(b.x, b.y);
+        ctx.strokeStyle = "#ffffff";
+        ctx.stroke();
+      }
+    }
+  }
 
-  /* Draw geometric construction lines */
+  ctx.restore();
+}
+
+/* Draw geometric outlines around page elements */
+
+function drawTargetOutlines(time) {
+  if (!targets.length) return;
 
   ctx.save();
-  ctx.strokeStyle="rgba(255,255,255,.35)";
-  ctx.lineWidth=1.2;
+  ctx.lineWidth = 1.1;
+  ctx.globalAlpha = .35;
 
-  const lineProgress=Math.min(Math.max((progress-.1)/.65,0),1);
+  const count = Math.min(3, targets.length);
 
-  ctx.beginPath();
+  for (let i = 0; i < count; i++) {
+    const target = targets[
+      (targetIndex + i * 3) % targets.length
+    ];
 
-  const boxWidth=Math.min(width*.58,570);
-  const boxHeight=Math.min(height*.4,260);
+    const pulse = Math.sin(time * 2 + i) * 3;
 
-  const points=[
-    [centerX-boxWidth/2,centerY-boxHeight/2],
-    [centerX+boxWidth/2,centerY-boxHeight/2],
-    [centerX+boxWidth/2,centerY+boxHeight/2],
-    [centerX-boxWidth/2,centerY+boxHeight/2],
-    [centerX-boxWidth/2,centerY-boxHeight/2]
-  ];
+    const x = target.x - target.width / 2 - 7;
+    const y = target.y - target.height / 2 - 7;
+    const width = target.width + 14 + pulse;
+    const height = target.height + 14 + pulse;
 
-  let totalLength=0;
-  const lengths=[];
+    ctx.strokeStyle = i === 0 ? "#ffe38b" : "#ffffff";
 
-  for(let i=0;i<points.length-1;i++){
-    const dx=points[i+1][0]-points[i][0];
-    const dy=points[i+1][1]-points[i][1];
-    const len=Math.hypot(dx,dy);
-    lengths.push(len);
-    totalLength+=len;
+    ctx.strokeRect(x, y, width, height);
   }
 
-  let remaining=totalLength*lineProgress;
-
-  ctx.moveTo(points[0][0],points[0][1]);
-
-  for(let i=0;i<lengths.length;i++){
-    const a=points[i];
-    const b=points[i+1];
-    const amount=Math.min(remaining,lengths[i]);
-    const ratio=amount/lengths[i];
-
-    ctx.lineTo(
-      a[0]+(b[0]-a[0])*ratio,
-      a[1]+(b[1]-a[1])*ratio
-    );
-
-    remaining-=amount;
-    if(remaining<=0)break;
-  }
-
-  ctx.stroke();
   ctx.restore();
+}
 
-  /* Animate cursors around a shared target */
+/* Main animation loop */
 
-  cursors.forEach((cursor,i)=>{
-    const angle=cursor.phase+elapsed*cursor.speed;
+function animate(timestamp) {
+  if (reducedMotion) return;
 
-    const radius=170*(1-progress)+45;
+  const dt = Math.min((timestamp - (lastTime || timestamp)) / 1000, .04);
+  lastTime = timestamp;
+  elapsed += dt;
 
-    const targetX=centerX+
-      Math.cos(angle)*radius+
-      Math.sin(elapsed*1.3+i)*35;
+  ctx.clearRect(0, 0, W, H);
 
-    const targetY=centerY+
-      Math.sin(angle)*radius*.6+
-      Math.cos(elapsed*1.1+i)*25;
+  /* Move to the next group of page elements */
 
-    cursor.x+=(targetX-cursor.x)*.045;
-    cursor.y+=(targetY-cursor.y)*.045;
-
-    /* Draw individual cursor trails */
-
-    if(i%2===0){
-      ctx.beginPath();
-      ctx.moveTo(cursor.previousX,cursor.previousY);
-      ctx.lineTo(cursor.x,cursor.y);
-      ctx.strokeStyle=cursor.color;
-      ctx.globalAlpha=.35;
-      ctx.lineWidth=1.4;
-      ctx.stroke();
-      ctx.globalAlpha=1;
-    }
-
-    cursor.previousX=cursor.x;
-    cursor.previousY=cursor.y;
-
-    drawCursor(
-      cursor.x,
-      cursor.y,
-      cursor.color,
-      cursor.size
-    );
-  });
-
-  /* Small connecting dots */
-
-  cursors.forEach(cursor=>{
-    ctx.beginPath();
-    ctx.arc(cursor.x,cursor.y,2,0,Math.PI*2);
-    ctx.fillStyle="white";
-    ctx.globalAlpha=.65;
-    ctx.fill();
-    ctx.globalAlpha=1;
-  });
-
-  animationFrame=requestAnimationFrame(animate);
-
-  if(elapsed>5.7){
-    hideIntro();
+  if (elapsed > 3.2) {
+    elapsed = 0;
+    targetIndex = (targetIndex + 3) % Math.max(targets.length, 1);
+    updateTargets();
   }
+
+  const time = timestamp / 1000;
+
+  agents.forEach((agent, i) => {
+    const destination = getDestination(agent, i, time);
+
+    const dx = destination.x - agent.x;
+    const dy = destination.y - agent.y;
+
+    agent.vx += dx * .9 * dt;
+    agent.vy += dy * .9 * dt;
+
+    agent.vx *= .90;
+    agent.vy *= .90;
+
+    agent.x += agent.vx;
+    agent.y += agent.vy;
+
+    /* Draw movement trails */
+
+    ctx.beginPath();
+    ctx.moveTo(agent.oldX, agent.oldY);
+    ctx.lineTo(agent.x, agent.y);
+
+    ctx.strokeStyle = agent.color;
+    ctx.globalAlpha = .45;
+    ctx.lineWidth = 1.4;
+    ctx.stroke();
+    ctx.globalAlpha = 1;
+
+    agent.oldX = agent.x;
+    agent.oldY = agent.y;
+  });
+
+  drawTargetOutlines(time);
+  drawConnections();
+
+  /* Draw cursors above the page */
+
+  agents.forEach(drawCursor);
+
+  requestAnimationFrame(animate);
 }
 
-/* Finish intro */
+/* Track page scrolling and layout changes */
 
-function hideIntro(){
-  if(finished)return;
+let scrollTimer;
 
-  finished=true;
+window.addEventListener("scroll", () => {
+  clearTimeout(scrollTimer);
+  scrollTimer = setTimeout(updateTargets, 80);
+}, { passive: true });
 
-  cancelAnimationFrame(animationFrame);
-  intro.classList.add("hidden");
+window.addEventListener("resize", updateTargets);
 
-  setTimeout(()=>{
-    intro.style.display="none";
-  },1000);
+resize();
+updateTargets();
+
+if (!reducedMotion) {
+  requestAnimationFrame(animate);
 }
 
-skipButton.addEventListener("click",hideIntro);
-
-/* Start animation */
-
-if(!reducedMotion){
-  animationFrame=requestAnimationFrame(animate);
-}else{
-  hideIntro();
-}
-
-/* Footer year */
+/* Footer */
 
 document.getElementById("year").textContent =
   new Date().getFullYear();
